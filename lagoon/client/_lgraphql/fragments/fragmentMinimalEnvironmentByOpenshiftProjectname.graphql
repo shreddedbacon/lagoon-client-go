@@ -1,0 +1,22 @@
+fragment EnvironmentByOpenshiftProjectName on Environment {
+    id
+    name
+    deployType
+    deployBaseRef
+    deployHeadRef
+    deployTitle
+    environmentType
+    openshiftProjectName
+    autoIdle
+    created
+    updated
+    deleted
+    route
+    routes
+    monitoringUrls
+    project {
+      id
+      name
+      gitUrl
+    }
+}

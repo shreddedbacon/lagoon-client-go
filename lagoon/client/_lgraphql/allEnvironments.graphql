@@ -1,0 +1,5 @@
+query($type: EnvType) {
+  allEnvironments(type: $type) {
+    ...AllEnvironments
+  }
+}

@@ -1,0 +1,19 @@
+fragment ProjectByName on Project {
+    id
+    name
+    autoIdle
+    branches
+    pullrequests
+    productionEnvironment
+    activeSystemsDeploy
+    activeSystemsTask
+    activeSystemsRemove
+    activeSystemsPromote
+    openshiftProjectPattern
+    developmentEnvironmentsLimit
+    gitUrl
+    autoIdle
+    openshift{
+        id
+    }
+}

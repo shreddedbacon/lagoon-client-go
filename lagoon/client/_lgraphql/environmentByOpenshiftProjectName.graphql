@@ -1,0 +1,9 @@
+query (
+    $openshiftProjectName: String!
+) {
+    environmentByOpenshiftProjectName(
+        openshiftProjectName: $openshiftProjectName
+    ) {
+        ...EnvironmentByOpenshiftProjectName
+    }
+}
