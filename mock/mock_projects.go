@@ -6,6 +6,7 @@ package mock
 
 import (
 	context "context"
+	client "github.com/amazeeio/lagoon-client-go/lagoon/client"
 	schema "github.com/amazeeio/lagoon-client-go/schema"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
@@ -88,4 +89,18 @@ func (m *MockProjects) RemoveProjectMetadataByKey(ctx context.Context, id int, k
 func (mr *MockProjectsMockRecorder) RemoveProjectMetadataByKey(ctx, id, key, project interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveProjectMetadataByKey", reflect.TypeOf((*MockProjects)(nil).RemoveProjectMetadataByKey), ctx, id, key, project)
+}
+
+// NotificationsForProject mocks base method
+func (m *MockProjects) NotificationsForProject(ctx context.Context, name string, project *schema.Project, request client.Request) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "NotificationsForProject", ctx, name, project, request)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// NotificationsForProject indicates an expected call of NotificationsForProject
+func (mr *MockProjectsMockRecorder) NotificationsForProject(ctx, name, project, request interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotificationsForProject", reflect.TypeOf((*MockProjects)(nil).NotificationsForProject), ctx, name, project, request)
 }

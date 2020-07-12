@@ -251,3 +251,26 @@ func (c *Client) EnvironmentByOpenshiftProjectName(
 		Response: environment,
 	})
 }
+
+// NotificationsForProject queries the lagoon API for project by name for notifications,
+// and unmarshals the response.
+func (c *Client) NotificationsForProject(
+	ctx context.Context, name string, projectNotifications *schema.Project, request Request) error {
+	request.query = "_lgraphql/projectByName.graphql"
+	request.fragment = "_lgraphql/fragments/fragmentProjectNotifications.graphql"
+	req, err := c.newRequest(
+		map[string]interface{}{
+			"name": name,
+		},
+		request,
+	)
+	if err != nil {
+		return err
+	}
+	return c.client.Run(ctx, req, &struct {
+		Response *schema.Project `json:"projectByName"`
+	}{
+		Response: projectNotifications,
+	})
+
+}

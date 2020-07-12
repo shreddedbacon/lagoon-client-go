@@ -1,0 +1,30 @@
+fragment ProjectByName on Project {
+    id
+    name
+    notifications {
+        ... on NotificationSlack {
+            __typename
+            webhook
+            name
+            channel
+        }
+        ... on NotificationRocketChat {
+            __typename
+            webhook
+            name
+            channel
+        }
+        {{ if apiVerGreaterThanOrEqual . "1.2.0" }}
+        ... on NotificationEmail {
+            __typename
+            emailAddress
+            name
+        }
+        ... on NotificationMicrosoftTeams {
+            __typename
+            webhook
+            name
+        }
+        {{ end }}
+    }
+}

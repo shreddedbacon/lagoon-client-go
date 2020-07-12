@@ -5,6 +5,7 @@ package lagoon
 import (
 	"context"
 
+	"github.com/amazeeio/lagoon-client-go/lagoon/client"
 	"github.com/amazeeio/lagoon-client-go/schema"
 )
 
@@ -14,6 +15,7 @@ type Projects interface {
 	ProjectsByMetadata(ctx context.Context, key string, value string, project *[]schema.ProjectMetadata) error
 	UpdateProjectMetadata(ctx context.Context, id int, key string, value string, project *schema.ProjectMetadata) error
 	RemoveProjectMetadataByKey(ctx context.Context, id int, key string, project *schema.ProjectMetadata) error
+	NotificationsForProject(ctx context.Context, name string, project *schema.Project, request client.Request) error
 }
 
 // GetMinimalProjectByName gets info of projects in lagoon that have matching metadata.
@@ -38,4 +40,10 @@ func UpdateProjectMetadata(ctx context.Context, id int, key string, value string
 func RemoveProjectMetadataByKey(ctx context.Context, id int, key string, p Projects) (*schema.ProjectMetadata, error) {
 	project := schema.ProjectMetadata{}
 	return &project, p.RemoveProjectMetadataByKey(ctx, id, key, &project)
+}
+
+// GetNotificationsForProject get notifications for a project.
+func GetNotificationsForProject(ctx context.Context, name string, request client.Request, p Projects) (*schema.Project, error) {
+	projectNotifications := schema.Project{}
+	return &projectNotifications, p.NotificationsForProject(ctx, name, &projectNotifications, request)
 }

@@ -30,6 +30,7 @@
 // _lgraphql/fragments/fragmentMinimalEnvironmentByOpenshiftProjectname.graphql
 // _lgraphql/fragments/fragmentMinimalProjectByName.graphql
 // _lgraphql/fragments/fragmentProjectByName.graphql
+// _lgraphql/fragments/fragmentProjectNotifications.graphql
 // _lgraphql/lagoonSchema.graphql
 // _lgraphql/lagoonVersion.graphql
 // _lgraphql/me.graphql
@@ -694,6 +695,26 @@ func _lgraphqlFragmentsFragmentprojectbynameGraphql() (*asset, error) {
 	return a, nil
 }
 
+var __lgraphqlFragmentsFragmentprojectnotificationsGraphql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\xbc\x90\xc1\x4e\xc3\x30\x0c\x86\xef\x7b\x0a\x6b\x0f\x10\x01\x6f\x00\x68\xe2\xc4\x40\x30\x71\x9d\x4c\xea\x52\xd3\xc6\x1e\x8e\x11\x9a\xaa\xbe\x3b\x0a\xd0\x69\x15\xa2\xe2\x80\xf8\x2f\x89\xfe\xfc\x89\xbf\xfc\xb5\xe1\x53\x22\x71\xb8\x35\x7d\xa6\xe8\x17\xfb\x35\x26\x02\x95\xd1\x80\x7e\x01\x00\xc0\xd5\xc7\x22\x98\xe8\x73\xa3\xce\x35\x47\x74\x56\xc9\x5f\x99\xa2\x10\x42\xb9\xbc\x3e\x3a\xbe\xef\x30\xb6\x47\x91\xa2\xed\xd6\xf7\x3b\x3a\xbc\x36\xea\x8d\x1e\x1b\xd5\x76\xe2\x7d\x0b\xc5\x06\x45\xa8\x3b\x78\xc3\xdc\xf0\x3b\x8d\x2d\xf9\x65\x83\xfe\x2f\x04\x7d\x0f\x5c\x03\xee\xf8\x81\xec\xca\x08\x9d\x6c\xd3\xa0\xdc\xd8\xea\xe5\x15\x3b\x08\xb0\x3c\x0d\x67\xe1\x64\x09\xc3\x2c\xf5\x2a\x21\x77\xbf\x03\xa6\x12\x3d\xaf\x2a\xa3\x9c\x7f\xa6\x9e\x9d\x76\xcd\xd1\x34\x6b\xed\x1b\xc2\x94\xff\xa8\xa7\x49\x27\x24\xd5\xf8\xe3\x61\x31\xbc\x07\x00\x00\xff\xff\x83\xc4\x8e\xe5\x74\x02\x00\x00")
+
+func _lgraphqlFragmentsFragmentprojectnotificationsGraphqlBytes() ([]byte, error) {
+	return bindataRead(
+		__lgraphqlFragmentsFragmentprojectnotificationsGraphql,
+		"_lgraphql/fragments/fragmentProjectNotifications.graphql",
+	)
+}
+
+func _lgraphqlFragmentsFragmentprojectnotificationsGraphql() (*asset, error) {
+	bytes, err := _lgraphqlFragmentsFragmentprojectnotificationsGraphqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "_lgraphql/fragments/fragmentProjectNotifications.graphql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
 var __lgraphqlLagoonschemaGraphql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x2a\x2c\x4d\x2d\xaa\x54\xa8\xe6\x52\x50\x88\x8f\x2f\x4e\xce\x48\xcd\x4d\x04\x73\x14\x14\x4a\x2a\x0b\x52\x8b\xa1\x6c\x05\x85\xec\xcc\xbc\x14\x28\x33\x2f\x31\x37\x15\xca\x4c\xcb\x4c\xcd\x49\x29\xd6\xc8\xcc\x4b\xce\x29\x4d\x49\x75\x49\x2d\x28\x4a\x4d\x4e\x2c\x49\x4d\xb1\x2a\x29\x2a\x4d\xd5\x84\x6b\x46\xd1\x53\xcb\x05\x23\x6b\xb9\x6a\x01\x01\x00\x00\xff\xff\x29\x07\x39\xef\x7e\x00\x00\x00")
 
 func _lgraphqlLagoonschemaGraphqlBytes() ([]byte, error) {
@@ -935,6 +956,7 @@ var _bindata = map[string]func() (*asset, error){
 	"_lgraphql/fragments/fragmentMinimalEnvironmentByOpenshiftProjectname.graphql": _lgraphqlFragmentsFragmentminimalenvironmentbyopenshiftprojectnameGraphql,
 	"_lgraphql/fragments/fragmentMinimalProjectByName.graphql":                     _lgraphqlFragmentsFragmentminimalprojectbynameGraphql,
 	"_lgraphql/fragments/fragmentProjectByName.graphql":                            _lgraphqlFragmentsFragmentprojectbynameGraphql,
+	"_lgraphql/fragments/fragmentProjectNotifications.graphql":                     _lgraphqlFragmentsFragmentprojectnotificationsGraphql,
 	"_lgraphql/lagoonSchema.graphql":                                               _lgraphqlLagoonschemaGraphql,
 	"_lgraphql/lagoonVersion.graphql":                                              _lgraphqlLagoonversionGraphql,
 	"_lgraphql/me.graphql":                                                         _lgraphqlMeGraphql,
@@ -1017,6 +1039,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			"fragmentMinimalEnvironmentByOpenshiftProjectname.graphql": &bintree{_lgraphqlFragmentsFragmentminimalenvironmentbyopenshiftprojectnameGraphql, map[string]*bintree{}},
 			"fragmentMinimalProjectByName.graphql":                     &bintree{_lgraphqlFragmentsFragmentminimalprojectbynameGraphql, map[string]*bintree{}},
 			"fragmentProjectByName.graphql":                            &bintree{_lgraphqlFragmentsFragmentprojectbynameGraphql, map[string]*bintree{}},
+			"fragmentProjectNotifications.graphql":                     &bintree{_lgraphqlFragmentsFragmentprojectnotificationsGraphql, map[string]*bintree{}},
 		}},
 		"lagoonSchema.graphql":               &bintree{_lgraphqlLagoonschemaGraphql, map[string]*bintree{}},
 		"lagoonVersion.graphql":              &bintree{_lgraphqlLagoonversionGraphql, map[string]*bintree{}},
