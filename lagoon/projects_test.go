@@ -33,6 +33,7 @@ func TestGetMinimalProjectByName(t *testing.T) {
 			project := mock.NewMockProjects(ctrl)
 			for i := range tc.expect.Project {
 				project.EXPECT().MinimalProjectByName(ctx, "", &tc.expect.Project[i])
+				project.EXPECT().NotificationsForProject(ctx, "", &tc.expect.Project[i], nil)
 			}
 			for i := range tc.expect.ProjectMetadata {
 				project.EXPECT().ProjectsByMetadata(ctx, "", "", &tc.expect.ProjectMetadata[i])
